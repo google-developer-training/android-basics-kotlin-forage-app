@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (C) 2021 The Android Open Source Project.
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/forageableListFragment">
+
+    <fragment
+        android:id="@+id/forageableListFragment"
+        android:name="com.example.forage.ui.ForageableListFragment"
+        android:label="Forage" >
+        <action
+            android:id="@+id/action_forageableListFragment_to_addForageableFragment"
+            app:destination="@id/addForageableFragment" />
+        <action
+            android:id="@+id/action_forageableListFragment_to_forageableDetailFragment"
+            app:destination="@id/forageableDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addForageableFragment"
+        android:name="com.example.forage.ui.AddForageableFragment"
+        android:label="Forage"
+        tools:layout="@layout/fragment_add_forageable" >
+        <action
+            android:id="@+id/action_addForageableFragment_to_forageableListFragment"
+            app:destination="@id/forageableListFragment" />
+        <argument
+            android:name="id"
+            app:argType="long"
+            android:defaultValue="0L" />
+    </fragment>
+    <fragment
+        android:id="@+id/forageableDetailFragment"
+        android:name="com.example.forage.ui.ForageableDetailFragment"
+        android:label="Forage"
+        tools:layout="@layout/fragment_forageable_detail" >
+        <argument
+            android:name="id"
+            android:defaultValue="0L"
+            app:argType="long" />
+        <action
+            android:id="@+id/action_forageableDetailFragment_to_addForageableFragment"
+            app:destination="@id/addForageableFragment" />
+    </fragment>
+
+</navigation>
