@@ -23,12 +23,16 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.asLiveData
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
+import com.example.forage.BaseApplication
 import com.example.forage.R
 import com.example.forage.databinding.FragmentForageableDetailBinding
 import com.example.forage.model.Forageable
 import com.example.forage.ui.viewmodel.ForageableViewModel
+import com.example.forage.ui.viewmodel.ForageableViewModelFactory
+import kotlinx.coroutines.flow.Flow
 
 /**
  * A fragment to display the details of a [Forageable] currently stored in the database.
@@ -38,10 +42,9 @@ class ForageableDetailFragment : Fragment() {
 
     private val navigationArgs: ForageableDetailFragmentArgs by navArgs()
 
-    // TODO: Refactor the creation of the view model to take an instance of
-    //  ForageableViewModelFactory. The factory should take an instance of the Database retrieved
-    //  from BaseApplication
-    private val viewModel: ForageableViewModel by activityViewModels()
+    private val viewModel: ForageableViewModel by activityViewModels() {
+        ForageableViewModelFactory((activity?.application as BaseApplication).database.forageableDao())
+    }
 
     private lateinit var forageable: Forageable
 
@@ -60,8 +63,11 @@ class ForageableDetailFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val id = navigationArgs.id
-        // TODO: Observe a forageable that is retrieved by id, set the forageable variable,
-        //  and call the bind forageable method
+        val item = viewModel.getForageable(id).asLiveData()
+        item.observe(viewLifecycleOwner) {
+            forageable = item.value!!
+            bindForageable()
+        }
     }
 
     private fun bindForageable() {
