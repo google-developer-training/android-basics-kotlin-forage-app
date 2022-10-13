@@ -22,7 +22,7 @@
     <data>
         <variable
             name="forageable"
-            type="com.example.forage.model.Forageable" />
+            type="com.stargrazer.forage.model.Forageable" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

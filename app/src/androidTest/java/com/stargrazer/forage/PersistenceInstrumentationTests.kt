@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.example.forage
+package com.stargrazer.forage
 
 import androidx.test.core.app.launchActivity
 import androidx.test.espresso.Espresso.onView
@@ -25,6 +25,7 @@ import androidx.test.espresso.matcher.ViewMatchers.isDisplayed
 import androidx.test.espresso.matcher.ViewMatchers.withId
 import androidx.test.espresso.matcher.ViewMatchers.withText
 import androidx.test.ext.junit.runners.AndroidJUnit4
+import com.example.forage.R
 import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith

@@ -13,14 +13,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.example.forage.data
+package com.stargrazer.forage
 
-import androidx.room.RoomDatabase
-import com.example.forage.model.Forageable
+import android.app.Application
+import com.stargrazer.forage.data.ForageDatabase
 
 /**
- * Room database to persist data for the Forage app.
- * This database stores a [Forageable] entity
+ * An application class that inherits from [Application], allows for the creation of a singleton
+ * instance of the [ForageDatabase]
  */
-// TODO: create the database with all necessary annotations, methods, variables, etc.
-abstract class ForageDatabase : RoomDatabase()
+class BaseApplication : Application() {
+    // TODOx: provide a ForageDatabase value by lazy here
+    val database : ForageDatabase by lazy { ForageDatabase.getDatabase(this) }
+}

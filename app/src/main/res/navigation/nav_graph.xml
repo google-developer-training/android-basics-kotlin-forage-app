@@ -22,7 +22,7 @@
 
     <fragment
         android:id="@+id/forageableListFragment"
-        android:name="com.example.forage.ui.ForageableListFragment"
+        android:name="com.stargrazer.forage.ui.ForageableListFragment"
         android:label="Forage" >
         <action
             android:id="@+id/action_forageableListFragment_to_addForageableFragment"
@@ -33,7 +33,7 @@
     </fragment>
     <fragment
         android:id="@+id/addForageableFragment"
-        android:name="com.example.forage.ui.AddForageableFragment"
+        android:name="com.stargrazer.forage.ui.AddForageableFragment"
         android:label="Forage"
         tools:layout="@layout/fragment_add_forageable" >
         <action
@@ -46,7 +46,7 @@
     </fragment>
     <fragment
         android:id="@+id/forageableDetailFragment"
-        android:name="com.example.forage.ui.ForageableDetailFragment"
+        android:name="com.stargrazer.forage.ui.ForageableDetailFragment"
         android:label="Forage"
         tools:layout="@layout/fragment_forageable_detail" >
         <argument

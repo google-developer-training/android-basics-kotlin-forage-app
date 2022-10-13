@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.example.forage
+package com.stargrazer.forage
 
 import android.os.Bundle
 import android.view.Menu
@@ -23,6 +23,7 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
+import com.example.forage.R
 import com.example.forage.databinding.ActivityMainBinding
 
 /**

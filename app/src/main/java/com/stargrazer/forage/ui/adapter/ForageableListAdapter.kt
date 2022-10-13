@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.example.forage.ui.adapter
+package com.stargrazer.forage.ui.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -21,7 +21,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.forage.databinding.ListItemForageableBinding
-import com.example.forage.model.Forageable
+import com.stargrazer.forage.model.Forageable
 
 /**
  * ListAdapter for the list of [Forageable]s retrieved from the database
