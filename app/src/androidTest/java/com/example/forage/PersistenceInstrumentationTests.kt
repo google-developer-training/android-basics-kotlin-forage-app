@@ -50,6 +50,7 @@ class PersistenceInstrumentationTests {
     fun new_forageable_is_displayed_in_list() {
         onView(withText("Name")).check(matches(isDisplayed()))
         onView(withText("Address")).check(matches(isDisplayed()))
+        delete_new_forageable()
     }
 
     @Test
@@ -59,6 +60,7 @@ class PersistenceInstrumentationTests {
         onView(withText("Address")).check(matches(isDisplayed()))
         onView(withText(("Currently out of season"))).check(matches(isDisplayed()))
         onView(withText("Notes")).check(matches(isDisplayed()))
+        delete_new_forageable()
     }
 
     @Test
